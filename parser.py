@@ -66,6 +66,7 @@ def three234(x):
 
 def parser(name):
     ret = []
+    y = []
     amax = 0
     with open(name, 'r') as f:
         for line in f:
@@ -92,7 +93,8 @@ def parser(name):
             hold += three230(int(line[2568]))
             hold += three234(int(line[2572]))
             ret += hold
+            y += [float(line[163]>1)]
         for i in range(len(ret)):
             ret[i][10] /= float(amax)
-    return ret
+    return ret, y
     
